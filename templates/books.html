@@ -55,6 +55,7 @@
           <th>Publisher</th>
           <th>Year of publication</th>
           <th>Number of pages</th>
+          <th>Borrowed</th>
         </tr>
         {% for book in books %}
         <tr>
@@ -63,6 +64,10 @@
           <td>{{ book['publisher'] }}</td>
           <td>{{ book['year'] }}</td>
           <td>{{ book['pages'] }}</td>
+          <td>
+            <input type="checkbox" class="checked" {% if book['borrowed']
+            %}checked{% endif %} disabled>
+          </td>
         </tr>
         {% endfor %}
       </table>
